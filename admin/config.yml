@@ -1,9 +1,14 @@
 backend:
-  # name: test-repo
-  name: git-gateway
-local_backend: true
-media_folder: "assets/css/images" # CMS upload folder (relative to the site root)
-public_folder: "/assets/css/images" # Path to files when referenced in the site
+  name: github
+  repo: RhysHoad/test-sacredhollow
+  branch: main
+  base_url: https://github.com
+  # The client_id is required for Decap to use your GitHub OAuth App for user login
+  auth_scope: repo # Grants read/write access to the repository
+  client_id: Ov23lidbnbJCKIh6SDfT
+local_backend: false
+media_folder: "assets/css/images"
+public_folder: "/assets/css/images"
 
 collections:
   - name: "site_content"

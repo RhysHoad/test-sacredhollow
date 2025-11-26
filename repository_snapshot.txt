@@ -3,6 +3,174 @@
 ---DIRECTORY:content/---
 
 ========REPOSITORYSNAPSHOTSTART(/Users/rhys/projects/test-sacredhollow)========
+---FILESTART:README.md---
+---FILESTART:index.html---
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title id="cms-meta_title">Sacred Hollow Reiki | Hatfield</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Reiki Healing in Hatfield, Hertfordshire" id="cms-meta_description">
+    
+    <link rel="stylesheet" href="assets/css/main.css" />
+    
+    <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+</head>
+<body class="is-preload">
+
+    <section id="header">
+        <header class="major">
+                        <h1 id="cms-hero_title">Sacred Hollow Reiki</h1>
+            <p id="cms-hero_subtitle">Restoring Balance & Energy in Hertfordshire</p>
+        </header>
+        <div style="flex-grow: 1;"></div> 
+        <div class="container">
+            <ul class="actions special">
+                                <li><a href="#one" class="button primary scrolly" id="cms-hero_primary_cta">Learn More</a></li> 
+                <li><a href="#three" class="button scrolly" id="cms-hero_cta">Book a Session</a></li>
+            </ul>
+        </div>
+        </section>
+
+    <section id="one" class="main special">
+        <div class="container">
+            <div class="content">
+                <header class="major">
+                    <h2 id="cms-about_heading">Who I Am</h2>
+                </header>
+                <p id="cms-about_text">
+                    Welcome to Sacred Hollow Reiki. I am a certified Reiki Level 1 and 2 practitioner based in Hatfield, Hertfordshire. 
+                    I provide a safe, calm, and sacred space where we work together to unblock your energy centers and promote natural healing 
+                    with focused 30 to 45-minute sessions.
+                </p>
+            </div>
+            <a href="#two" class="goto-next scrolly">Next</a>
+        </div>
+    </section>
+
+    <section id="two" class="main special">
+        <div class="container">
+            <div class="content">
+                <header class="major">
+                    <h2 id="cms-services_heading">Our Sessions</h2>
+                </header>
+                <p id="cms-services_text">I offer focused 30 to 45-minute Reiki sessions designed to fit into your busy schedule while providing maximum relaxation and energetic realignment.</p>
+                <ul class="icons-grid">
+                    <li>
+                        <span class="icon solid major fa-leaf"></span>
+                        <h3 id="cms-service_1">Energy Clearing </h3>
+                    </li>
+                    <li>
+                        <span class="icon solid major fa-hand-holding-heart"></span>
+                        <h3 id="cms-service_2">Stress Relief</h3>
+                    </li>
+                    <li>
+                        <span class="icon solid major fa-spa"></span>
+                        <h3 id="cms-service_3">Chakra Balance</h3>
+                    </li>
+                    <li>
+                        <span class="icon solid major fa-moon"></span>
+                        <h3 id="cms-service_4">Deep Relaxation</h3>
+                                        </li> 
+                </ul>
+            </div>
+            <a href="#three" class="goto-next scrolly">Next</a>
+        </div>
+    </section>
+
+    <section id="three" class="main special">
+        <div class="container">
+            <div class="content">
+                <header class="major">
+                    <h2 id="cms-booking_heading">Book Your Appointment</h2>
+                </header>
+                <p id="cms-booking_text">Ready to restore your balance? Use the scheduler below to book your 30 or 45-minute session at our Hatfield studio.</p>
+                
+                <div class="booking-area">
+                    <p>Select a time below to schedule your 30 or 45-minute session.</p>
+                    <div id="google-calendar-target"></div>
+                </div>
+            </div>
+            <a href="#footer" class="goto-next scrolly">Next</a>
+        </div>
+    </section>
+
+    <section id="footer">
+        <div class="container">
+            <header class="major">
+                <h2 id="cms-contact_heading">Get in Touch</h2>
+            </header>
+            <form method="post" action="#">
+                <div class="row gtr-uniform">
+                    <div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
+                    <div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
+                    <div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea></div>
+                    <div class="col-12">
+                        <ul class="actions special">
+                            <li><input type="submit" value="Send Message" class="primary" /></li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <footer>
+            <ul class="icons">
+                                <li><a href="#" class="icon brands alt fa-facebook-f" id="cms-facebook_url"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon brands alt fa-instagram" id="cms-instagram_url"><span class="label">Instagram</span></a></li>
+                <li><a href="#" class="icon solid alt fa-envelope" id="cms-email_url"><span class="label">Email</span></a></li>
+            </ul>
+            <ul class="copyright">
+                <li id="cms-copyright">&copy; Sacred Hollow Reiki</li>
+            </ul>
+        </footer>
+    </section>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+    <script>
+    // Existing Google Calendar integration
+    (function() {
+      var target = document.getElementById('google-calendar-target');
+      window.addEventListener('load', function() {
+        if(typeof calendar !== 'undefined' && calendar.schedulingButton) {
+          calendar.schedulingButton.load({
+            url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1zAD758Wz4ufrZrgXJyuMldC71GSvP9eCHFZnoKhl2hYyDx8-A6RR-c7Z7V1BeCBDBtZzyb572?gv=true',
+            color: '#0B8043',
+            label: 'Book an appointment',
+            target: target 
+          });
+        }
+      });
+    })();
+    </script>
+
+    <script>
+/*
+        // REMOVED: Decap CMS Content Injection Script.
+        // The script below has been moved into admin/cms-logic.js
+        // The site will now rely on Decap's built-in fetch/preview logic.
+        fetch('content/main.json')
+            .then(response => response.json())
+            .then(data => {
+                // ... all your previous DOM updates ...
+            })
+            .catch(error => console.error('Error loading CMS content:', error));
+*/
+    </script>
+
+</body>
+</html>
+---FILEEND:index.html---
+---FILEEND:README.md---
+
 ---FILESTART:decap.env---
 PORT=8000
 ---FILEEND:decap.env---
@@ -327,9 +495,10 @@ CMS.init();
 
 ---FILESTART:admin/config.yml---
 backend:
-  # name: test-repo
-  name: git-gateway
-local_backend: true
+  name: github
+local_backend: false
+repo: RhysHoad/test-sacredhollow
+branch: main
 media_folder: "assets/css/images" # CMS upload folder (relative to the site root)
 public_folder: "/assets/css/images" # Path to files when referenced in the site
 

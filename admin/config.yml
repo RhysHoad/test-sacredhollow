@@ -2,7 +2,7 @@ backend:
   name: github
   repo: RhysHoad/test-sacredhollow
   branch: main
-  base_url: https://github.com
+  base_url: https://rhyshoad.github.io/test-sacredhollow
   # The client_id is required for Decap to use your GitHub OAuth App for user login
   auth_scope: repo # Grants read/write access to the repository
   client_id: Ov23lidbnbJCKIh6SDfT

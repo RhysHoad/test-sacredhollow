@@ -6,6 +6,10 @@ backend:
   # The client_id is required for Decap to use your GitHub OAuth App for user login
   auth_scope: repo # Grants read/write access to the repository
   client_id: Ov23lidbnbJCKIh6SDfT
+
+site_url: https://rhyshoad.github.io/test-sacredhollow/
+display_url: https://rhyshoad.github.io/test-sacredhollow/
+
 local_backend: false
 media_folder: "assets/css/images"
 public_folder: "/assets/css/images"

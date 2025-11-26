@@ -1,9 +1,4 @@
-// FILE: admin/cms-logic.js
-
-// 0. EXPLICITLY DISABLE NETLIFY IDENTITY PROVIDER
-if(typeof CMS !== 'undefined'){
-    CMS.unregisterBackend('netlify-identity');
-}
+// FILE: admin/cms-logic.js (Updated, Initialization Code Removed)
 
 // 1. Destructure the official React helpers from the CMS namespace
 const { createClass, h } = CMS.React;
@@ -12,7 +7,7 @@ const { createClass, h } = CMS.React;
 const MainPagePreview = createClass({
     // 0. Define the preview source (the iframe)
     getDocument: function() {
-        return h('iframe', { src: '/' }); 
+        return h('iframe', { src: '/' }); 
     },
 
     // Function to re-run the external scripts and content update logic
@@ -21,35 +16,23 @@ const MainPagePreview = createClass({
 
         var iframeDoc = iframe.document;
         
-        // --- Step 1: Manual DOM/Class Fixes & Asset Handling ---
-        // Crucial: Manually remove 'is-preload' class 
+        // Crucial: Manually remove 'is-preload' class 
         iframeDoc.body.classList.remove('is-preload');
 
-        // Handle Background Image: Since this image is likely set via CSS/JS in the theme,
-        // we'll try to update the path on the <body> tag as a fallback.
-        var data = entry.get('data').toJS(); 
-        var bgImage = data['bg_image'];
-        if (bgImage) {
-            // NOTE: If the image is controlled by main.css, this step will be ignored 
-            // but we ensure the image path is available if the theme tries to fetch it.
-            // If the image is loaded via CSS, you must manually check the final CSS path.
-        }
+        var data = entry.get('data').toJS(); 
 
-
-        // --- Step 2: Rerun Content Injection ---
         // Helper function to update text content
         var updateText = function(id, key) {
             var el = iframeDoc.getElementById(id);
             if (el) {
-                // Use widgetFor for live preview (including markdown rendering)
                 if (key === 'about_text' || key === 'booking_text' || key === 'services_text') {
-                    var htmlContent = this.props.widgetFor(key).toString(); 
+                    var htmlContent = this.props.widgetFor(key).toString(); 
                     el.innerHTML = htmlContent;
                 } else {
                     el.textContent = data[key]; // Use direct data for simple strings
                 }
             }
-        }.bind(this); 
+        }.bind(this); 
 
         // Helper function to update element attributes
         var updateAttribute = function(id, key, attr) {
@@ -87,7 +70,7 @@ const MainPagePreview = createClass({
         if (iframe.calendar && iframe.calendar.schedulingButton) {
             var targetEl = iframeDoc.getElementById('google-calendar-target');
             if (targetEl) {
-                targetEl.innerHTML = ''; // Clear the target element first to prevent duplicates
+                targetEl.innerHTML = ''; 
                 iframe.calendar.schedulingButton.load({
                     url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1zAD758Wz4ufrZrgXJyuMldC71GSvP9eCHFZnoKhl2hYyDx8-A6RR-c7Z7V1BeCBDBtZzyb572?gv=true',
                     color: '#0B8043',
@@ -98,7 +81,6 @@ const MainPagePreview = createClass({
         }
         
         // --- Step 4: Aggressive Theme Re-initialization (THE KEY FIX) ---
-        // This attempts to find and re-execute the theme's core logic which likely runs on $(window).on('load')
         if (iframe.window.jQuery) {
             var $ = iframe.window.jQuery;
             
@@ -111,8 +93,6 @@ const MainPagePreview = createClass({
             }
 
             // 4b. Re-run the main theme logic
-            // Since we don't know the exact function name in main.js, we simulate the 'load' event.
-            // This forces the theme's main initialization function (likely wrapped in a $(window).load() or $(document).ready()) to fire again.
             $(iframe.window).trigger('load');
             $(iframeDoc).trigger('ready');
 
@@ -120,7 +100,6 @@ const MainPagePreview = createClass({
             iframe.dispatchEvent(new iframe.Event('resize'));
             iframe.dispatchEvent(new iframe.Event('scroll'));
 
-            // Optional: A final check a bit later
             setTimeout(function() {
                 iframe.dispatchEvent(new iframe.Event('resize'));
             }, 500);
@@ -135,20 +114,16 @@ const MainPagePreview = createClass({
     
     // 2. Logic to run when the component is mounted for the first time
     componentDidMount: function() {
-        // Increased delay to ensure all registered scripts have fully loaded inside the iframe.
         setTimeout(() => {
              this.reinitializeIframeContent(this.props.window, this.props.entry);
-        }, 500); // 500ms delay is safer for complex script loading
+        }, 500); 
     },
 
     // 3. Render the iframe element
     render: function() {
-        return h(this.getDocument); 
+        return h(this.getDocument); 
     }
 });
 
 // 4. Register the Template
 CMS.registerPreviewTemplate('main_page', MainPagePreview);
-
-// 5. *** INITIALIZE CMS HERE ***
-CMS.init();

@@ -1,3 +1,10 @@
+// FILE: admin/cms-logic.js
+
+// 0. EXPLICITLY DISABLE NETLIFY IDENTITY PROVIDER
+if(typeof CMS !== 'undefined'){
+    CMS.unregisterBackend('netlify-identity');
+}
+
 // 1. Destructure the official React helpers from the CMS namespace
 const { createClass, h } = CMS.React;
 

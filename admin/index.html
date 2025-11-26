@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <title>SacredHollowContentManager</title>
+</head>
+<body>
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    
+    <script src="cms-logic.js"></script>
+    
+    <script>
+        if(typeof CMS !== 'undefined'){
+            // Register CSS for the preview frame
+            // Changed from "/assets/css/main.css" to "assets/css/main.css"
+            CMS.registerPreviewStyle("assets/css/main.css");
+            
+            // --- NEW: Register critical JS for the preview frame ---
+            // Changed paths from "/assets/..." to "assets/..."
+            CMS.registerPreviewScript("assets/js/jquery.min.js");
+            CMS.registerPreviewScript("assets/js/jquery.scrollex.min.js");
+            CMS.registerPreviewScript("assets/js/jquery.scrolly.min.js");
+            CMS.registerPreviewScript("assets/js/browser.min.js");
+            CMS.registerPreviewScript("assets/js/breakpoints.min.js");
+            CMS.registerPreviewScript("assets/js/util.js");
+            CMS.registerPreviewScript("assets/js/main.js");
+            
+            // NOTE: CMS.init() is now inside cms-logic.js, so no further setup is needed here.
+        } else {
+            console.error("Fatal: CMS object is undefined.");
+        }
+    </script>
+</body>
+</html>

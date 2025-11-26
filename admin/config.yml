@@ -1,0 +1,96 @@
+backend:
+  # name: test-repo
+  name: git-gateway
+local_backend: true
+media_folder: "assets/css/images" # CMS upload folder (relative to the site root)
+public_folder: "/assets/css/images" # Path to files when referenced in the site
+
+collections:
+  - name: "site_content"
+    label: "Site Content"
+    description: "All content for the single-page website."
+    files:
+      - file: "content/main.json" # The file Decap will create and manage
+        label: "Main Page Content"
+        name: "main_page"
+        fields:
+          # --- SEO / META ---
+          - label: "SEO Title Tag"
+            name: "meta_title"
+            widget: "string"
+          - label: "Meta Description"
+            name: "meta_description"
+            widget: "string"
+            required: false
+
+          # --- HERO SECTION ---
+          - label: "Hero Main Title (H1)"
+            name: "hero_title"
+            widget: "string"
+          - label: "Hero Subtitle (P)"
+            name: "hero_subtitle"
+            widget: "string"
+          - label: "Primary CTA Button Text"
+            name: "hero_primary_cta"
+            widget: "string"
+          - label: "Secondary CTA Button Text"
+            name: "hero_cta"
+            widget: "string"
+          - label: "Background Image (bg.jpg)"
+            name: "bg_image"
+            widget: "image"
+            hint: "Upload your main background image. You will need to manually update the path in main.css for this to show up."
+            required: false
+
+          # --- ABOUT SECTION ---
+          - label: "About Section Heading"
+            name: "about_heading"
+            widget: "string"
+          - label: "About Section Text"
+            name: "about_text"
+            widget: "text"
+
+          # --- SERVICES SECTION ---
+          - label: "Services Section Heading"
+            name: "services_heading"
+            widget: "string"
+          - label: "Services Introduction Text"
+            name: "services_text"
+            widget: "text"
+          - label: "Service 1 Title (Energy Clearing)"
+            name: "service_1"
+            widget: "string"
+          - label: "Service 2 Title (Stress Relief)"
+            name: "service_2"
+            widget: "string"
+          - label: "Service 3 Title (Chakra Balance)"
+            name: "service_3"
+            widget: "string"
+          - label: "Service 4 Title (Deep Relaxation)"
+            name: "service_4"
+            widget: "string"
+
+          # --- BOOKING SECTION ---
+          - label: "Booking Section Heading"
+            name: "booking_heading"
+            widget: "string"
+          - label: "Booking Introduction Text"
+            name: "booking_text"
+            widget: "text"
+            
+          # --- CONTACT / FOOTER ---
+          - label: "Contact Section Heading"
+            name: "contact_heading"
+            widget: "string"
+          - label: "Facebook URL"
+            name: "facebook_url"
+            widget: "string"
+          - label: "Instagram URL"
+            name: "instagram_url"
+            widget: "string"
+          - label: "Email Link (mailto:)"
+            name: "email_url"
+            widget: "string"
+          - label: "Copyright Text"
+            name: "copyright"
+            widget: "string"

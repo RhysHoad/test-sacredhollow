@@ -1,0 +1,492 @@
+---DIRECTORY:/---
+---DIRECTORY:admin/---
+---DIRECTORY:content/---
+
+========REPOSITORYSNAPSHOTSTART(/Users/rhys/projects/test-sacredhollow)========
+---FILESTART:decap.env---
+PORT=8000
+---FILEEND:decap.env---
+
+---FILESTART:index.html---
+---FILESTART:index.html---
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title id="cms-meta_title">Sacred Hollow Reiki | Hatfield</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Reiki Healing in Hatfield, Hertfordshire" id="cms-meta_description">
+    
+    <link rel="stylesheet" href="assets/css/main.css" />
+    
+    <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+</head>
+<body class="is-preload">
+
+    <section id="header">
+        <header class="major">
+                        <h1 id="cms-hero_title">Sacred Hollow Reiki</h1>
+            <p id="cms-hero_subtitle">Restoring Balance & Energy in Hertfordshire</p>
+        </header>
+        <div style="flex-grow: 1;"></div> 
+        <div class="container">
+            <ul class="actions special">
+                                <li><a href="#one" class="button primary scrolly" id="cms-hero_primary_cta">Learn More</a></li> 
+                <li><a href="#three" class="button scrolly" id="cms-hero_cta">Book a Session</a></li>
+            </ul>
+        </div>
+        </section>
+
+    <section id="one" class="main special">
+        <div class="container">
+            <div class="content">
+                <header class="major">
+                    <h2 id="cms-about_heading">Who I Am</h2>
+                </header>
+                <p id="cms-about_text">
+                    Welcome to Sacred Hollow Reiki. I am a certified Reiki Level 1 and 2 practitioner based in Hatfield, Hertfordshire. 
+                    I provide a safe, calm, and sacred space where we work together to unblock your energy centers and promote natural healing 
+                    with focused 30 to 45-minute sessions.
+                </p>
+            </div>
+            <a href="#two" class="goto-next scrolly">Next</a>
+        </div>
+    </section>
+
+    <section id="two" class="main special">
+        <div class="container">
+            <div class="content">
+                <header class="major">
+                    <h2 id="cms-services_heading">Our Sessions</h2>
+                </header>
+                <p id="cms-services_text">I offer focused 30 to 45-minute Reiki sessions designed to fit into your busy schedule while providing maximum relaxation and energetic realignment.</p>
+                <ul class="icons-grid">
+                    <li>
+                        <span class="icon solid major fa-leaf"></span>
+                        <h3 id="cms-service_1">Energy Clearing </h3>
+                    </li>
+                    <li>
+                        <span class="icon solid major fa-hand-holding-heart"></span>
+                        <h3 id="cms-service_2">Stress Relief</h3>
+                    </li>
+                    <li>
+                        <span class="icon solid major fa-spa"></span>
+                        <h3 id="cms-service_3">Chakra Balance</h3>
+                    </li>
+                    <li>
+                        <span class="icon solid major fa-moon"></span>
+                        <h3 id="cms-service_4">Deep Relaxation</h3>
+                                        </li> 
+                </ul>
+            </div>
+            <a href="#three" class="goto-next scrolly">Next</a>
+        </div>
+    </section>
+
+    <section id="three" class="main special">
+        <div class="container">
+            <div class="content">
+                <header class="major">
+                    <h2 id="cms-booking_heading">Book Your Appointment</h2>
+                </header>
+                <p id="cms-booking_text">Ready to restore your balance? Use the scheduler below to book your 30 or 45-minute session at our Hatfield studio.</p>
+                
+                <div class="booking-area">
+                    <p>Select a time below to schedule your 30 or 45-minute session.</p>
+                    <div id="google-calendar-target"></div>
+                </div>
+            </div>
+            <a href="#footer" class="goto-next scrolly">Next</a>
+        </div>
+    </section>
+
+    <section id="footer">
+        <div class="container">
+            <header class="major">
+                <h2 id="cms-contact_heading">Get in Touch</h2>
+            </header>
+            <form method="post" action="#">
+                <div class="row gtr-uniform">
+                    <div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
+                    <div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
+                    <div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea></div>
+                    <div class="col-12">
+                        <ul class="actions special">
+                            <li><input type="submit" value="Send Message" class="primary" /></li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <footer>
+            <ul class="icons">
+                                <li><a href="#" class="icon brands alt fa-facebook-f" id="cms-facebook_url"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon brands alt fa-instagram" id="cms-instagram_url"><span class="label">Instagram</span></a></li>
+                <li><a href="#" class="icon solid alt fa-envelope" id="cms-email_url"><span class="label">Email</span></a></li>
+            </ul>
+            <ul class="copyright">
+                <li id="cms-copyright">&copy; Sacred Hollow Reiki</li>
+            </ul>
+        </footer>
+    </section>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+    <script>
+    // Existing Google Calendar integration
+    (function() {
+      var target = document.getElementById('google-calendar-target');
+      window.addEventListener('load', function() {
+        if(typeof calendar !== 'undefined' && calendar.schedulingButton) {
+          calendar.schedulingButton.load({
+            url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1zAD758Wz4ufrZrgXJyuMldC71GSvP9eCHFZnoKhl2hYyDx8-A6RR-c7Z7V1BeCBDBtZzyb572?gv=true',
+            color: '#0B8043',
+            label: 'Book an appointment',
+            target: target 
+          });
+        }
+      });
+    })();
+    </script>
+
+    <script>
+/*
+        // REMOVED: Decap CMS Content Injection Script.
+        // The script below has been moved into admin/cms-logic.js
+        // The site will now rely on Decap's built-in fetch/preview logic.
+        fetch('content/main.json')
+            .then(response => response.json())
+            .then(data => {
+                // ... all your previous DOM updates ...
+            })
+            .catch(error => console.error('Error loading CMS content:', error));
+*/
+    </script>
+
+</body>
+</html>
+---FILEEND:index.html---
+---FILEEND:index.html---
+
+---FILESTART:admin/cms-logic.js---
+// 1. Destructure the official React helpers from the CMS namespace
+const { createClass, h } = CMS.React;
+
+// --- Main Preview Template (using Iframe) ---
+const MainPagePreview = createClass({
+    // 0. Define the preview source (the iframe)
+    getDocument: function() {
+        return h('iframe', { src: '/' }); 
+    },
+
+    // Function to re-run the external scripts and content update logic
+    reinitializeIframeContent: function(iframe, entry) {
+        if (!iframe || !iframe.document || !entry) return;
+
+        var iframeDoc = iframe.document;
+        
+        // --- Step 1: Manual DOM/Class Fixes & Asset Handling ---
+        // Crucial: Manually remove 'is-preload' class 
+        iframeDoc.body.classList.remove('is-preload');
+
+        // Handle Background Image: Since this image is likely set via CSS/JS in the theme,
+        // we'll try to update the path on the <body> tag as a fallback.
+        var data = entry.get('data').toJS(); 
+        var bgImage = data['bg_image'];
+        if (bgImage) {
+            // NOTE: If the image is controlled by main.css, this step will be ignored 
+            // but we ensure the image path is available if the theme tries to fetch it.
+            // If the image is loaded via CSS, you must manually check the final CSS path.
+        }
+
+
+        // --- Step 2: Rerun Content Injection ---
+        // Helper function to update text content
+        var updateText = function(id, key) {
+            var el = iframeDoc.getElementById(id);
+            if (el) {
+                // Use widgetFor for live preview (including markdown rendering)
+                if (key === 'about_text' || key === 'booking_text' || key === 'services_text') {
+                    var htmlContent = this.props.widgetFor(key).toString(); 
+                    el.innerHTML = htmlContent;
+                } else {
+                    el.textContent = data[key]; // Use direct data for simple strings
+                }
+            }
+        }.bind(this); 
+
+        // Helper function to update element attributes
+        var updateAttribute = function(id, key, attr) {
+            var el = iframeDoc.getElementById(id);
+            if (el) {
+                el.setAttribute(attr, data[key]);
+            }
+        };
+
+        // Apply all updates
+        updateText('cms-meta_title', 'meta_title');
+        updateAttribute('cms-meta_description', 'meta_description', 'content');
+        updateText('cms-hero_title', 'hero_title');
+        updateText('cms-hero_subtitle', 'hero_subtitle');
+        updateText('cms-hero_primary_cta', 'hero_primary_cta');
+        updateText('cms-hero_cta', 'hero_cta');
+        updateText('cms-about_heading', 'about_heading');
+        updateText('cms-about_text', 'about_text');
+        updateText('cms-services_heading', 'services_heading');
+        updateText('cms-services_text', 'services_text');
+        updateText('cms-service_1', 'service_1');
+        updateText('cms-service_2', 'service_2');
+        updateText('cms-service_3', 'service_3');
+        updateText('cms-service_4', 'service_4');
+        updateText('cms-booking_heading', 'booking_heading');
+        updateText('cms-booking_text', 'booking_text');
+        updateText('cms-contact_heading', 'contact_heading');
+        updateText('cms-copyright', 'copyright');
+        updateAttribute('cms-facebook_url', 'facebook_url', 'href');
+        updateAttribute('cms-instagram_url', 'instagram_url', 'href');
+        updateAttribute('cms-email_url', 'email_url', 'href');
+
+
+        // --- Step 3: Rerun Google Calendar Widget ---
+        if (iframe.calendar && iframe.calendar.schedulingButton) {
+            var targetEl = iframeDoc.getElementById('google-calendar-target');
+            if (targetEl) {
+                targetEl.innerHTML = ''; // Clear the target element first to prevent duplicates
+                iframe.calendar.schedulingButton.load({
+                    url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1zAD758Wz4ufrZrgXJyuMldC71GSvP9eCHFZnoKhl2hYyDx8-A6RR-c7Z7V1BeCBDBtZzyb572?gv=true',
+                    color: '#0B8043',
+                    label: 'Book an appointment',
+                    target: targetEl
+                });
+            }
+        }
+        
+        // --- Step 4: Aggressive Theme Re-initialization (THE KEY FIX) ---
+        // This attempts to find and re-execute the theme's core logic which likely runs on $(window).on('load')
+        if (iframe.window.jQuery) {
+            var $ = iframe.window.jQuery;
+            
+            // 4a. Rerun Scrollex/Scrolly logic
+            if ($.fn.scrollex) {
+                $('.scrollex').scrollex({ mode: 'set' });
+            }
+            if ($.fn.scrolly) {
+                $('.scrolly').scrolly({ mode: 'set' });
+            }
+
+            // 4b. Re-run the main theme logic
+            // Since we don't know the exact function name in main.js, we simulate the 'load' event.
+            // This forces the theme's main initialization function (likely wrapped in a $(window).load() or $(document).ready()) to fire again.
+            $(iframe.window).trigger('load');
+            $(iframeDoc).trigger('ready');
+
+            // 4c. Dispatch DOM events
+            iframe.dispatchEvent(new iframe.Event('resize'));
+            iframe.dispatchEvent(new iframe.Event('scroll'));
+
+            // Optional: A final check a bit later
+            setTimeout(function() {
+                iframe.dispatchEvent(new iframe.Event('resize'));
+            }, 500);
+        }
+    },
+
+
+    // 1. Logic to run whenever content changes
+    componentDidUpdate: function() {
+        this.reinitializeIframeContent(this.props.window, this.props.entry);
+    },
+    
+    // 2. Logic to run when the component is mounted for the first time
+    componentDidMount: function() {
+        // Increased delay to ensure all registered scripts have fully loaded inside the iframe.
+        setTimeout(() => {
+             this.reinitializeIframeContent(this.props.window, this.props.entry);
+        }, 500); // 500ms delay is safer for complex script loading
+    },
+
+    // 3. Render the iframe element
+    render: function() {
+        return h(this.getDocument); 
+    }
+});
+
+// 4. Register the Template
+CMS.registerPreviewTemplate('main_page', MainPagePreview);
+
+// 5. *** INITIALIZE CMS HERE ***
+CMS.init();
+---FILEEND:admin/cms-logic.js---
+
+---FILESTART:admin/config.yml---
+backend:
+  # name: test-repo
+  name: git-gateway
+local_backend: true
+media_folder: "assets/css/images" # CMS upload folder (relative to the site root)
+public_folder: "/assets/css/images" # Path to files when referenced in the site
+
+collections:
+  - name: "site_content"
+    label: "Site Content"
+    description: "All content for the single-page website."
+    files:
+      - file: "content/main.json" # The file Decap will create and manage
+        label: "Main Page Content"
+        name: "main_page"
+        fields:
+          # --- SEO / META ---
+          - label: "SEO Title Tag"
+            name: "meta_title"
+            widget: "string"
+          - label: "Meta Description"
+            name: "meta_description"
+            widget: "string"
+            required: false
+
+          # --- HERO SECTION ---
+          - label: "Hero Main Title (H1)"
+            name: "hero_title"
+            widget: "string"
+          - label: "Hero Subtitle (P)"
+            name: "hero_subtitle"
+            widget: "string"
+          - label: "Primary CTA Button Text"
+            name: "hero_primary_cta"
+            widget: "string"
+          - label: "Secondary CTA Button Text"
+            name: "hero_cta"
+            widget: "string"
+          - label: "Background Image (bg.jpg)"
+            name: "bg_image"
+            widget: "image"
+            hint: "Upload your main background image. You will need to manually update the path in main.css for this to show up."
+            required: false
+
+          # --- ABOUT SECTION ---
+          - label: "About Section Heading"
+            name: "about_heading"
+            widget: "string"
+          - label: "About Section Text"
+            name: "about_text"
+            widget: "text"
+
+          # --- SERVICES SECTION ---
+          - label: "Services Section Heading"
+            name: "services_heading"
+            widget: "string"
+          - label: "Services Introduction Text"
+            name: "services_text"
+            widget: "text"
+          - label: "Service 1 Title (Energy Clearing)"
+            name: "service_1"
+            widget: "string"
+          - label: "Service 2 Title (Stress Relief)"
+            name: "service_2"
+            widget: "string"
+          - label: "Service 3 Title (Chakra Balance)"
+            name: "service_3"
+            widget: "string"
+          - label: "Service 4 Title (Deep Relaxation)"
+            name: "service_4"
+            widget: "string"
+
+          # --- BOOKING SECTION ---
+          - label: "Booking Section Heading"
+            name: "booking_heading"
+            widget: "string"
+          - label: "Booking Introduction Text"
+            name: "booking_text"
+            widget: "text"
+            
+          # --- CONTACT / FOOTER ---
+          - label: "Contact Section Heading"
+            name: "contact_heading"
+            widget: "string"
+          - label: "Facebook URL"
+            name: "facebook_url"
+            widget: "string"
+          - label: "Instagram URL"
+            name: "instagram_url"
+            widget: "string"
+          - label: "Email Link (mailto:)"
+            name: "email_url"
+            widget: "string"
+          - label: "Copyright Text"
+            name: "copyright"
+            widget: "string"
+---FILEEND:admin/config.yml---
+
+---FILESTART:admin/index.html---
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <title>SacredHollowContentManager</title>
+</head>
+<body>
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    
+    <script src="cms-logic.js"></script>
+    
+    <script>
+        if(typeof CMS !== 'undefined'){
+            // Register CSS for the preview frame
+            // Changed from "/assets/css/main.css" to "assets/css/main.css"
+            CMS.registerPreviewStyle("assets/css/main.css");
+            
+            // --- NEW: Register critical JS for the preview frame ---
+            // Changed paths from "/assets/..." to "assets/..."
+            CMS.registerPreviewScript("assets/js/jquery.min.js");
+            CMS.registerPreviewScript("assets/js/jquery.scrollex.min.js");
+            CMS.registerPreviewScript("assets/js/jquery.scrolly.min.js");
+            CMS.registerPreviewScript("assets/js/browser.min.js");
+            CMS.registerPreviewScript("assets/js/breakpoints.min.js");
+            CMS.registerPreviewScript("assets/js/util.js");
+            CMS.registerPreviewScript("assets/js/main.js");
+            
+            // NOTE: CMS.init() is now inside cms-logic.js, so no further setup is needed here.
+        } else {
+            console.error("Fatal: CMS object is undefined.");
+        }
+    </script>
+</body>
+</html>
+---FILEEND:admin/index.html---
+
+---FILESTART:content/main.json---
+{
+  "bg_image": "/assets/css/images/bg.jpg",
+  "services_heading": "Our Sessions",
+  "meta_description": "Reiki Healing in Hatfield, Hertfordshire",
+  "instagram_url": "#",
+  "contact_heading": "Get in Touch",
+  "service_1": "Energy Clearing",
+  "copyright": "©Sacred Hollow Reiki",
+  "service_2": "Stress Relief",
+  "service_3": "Chakra Balance",
+  "service_4": "Deep Relaxation",
+  "hero_cta": "Book a Session",
+  "email_url": "#",
+  "services_text": "I offer focused 30 to 45-minute Reiki sessions designed to fit into your busy schedule while providing maximum relaxation and energetic realignment.",
+  "hero_primary_cta": "Learn More",
+  "about_heading": "Who I Am",
+  "booking_text": "Ready to restore your balance? Use the scheduler below to book your 30 or 45-minute session at our Hatfield studio.",
+  "hero_title": "Sacred Hollow Reiki",
+  "facebook_url": "#",
+  "booking_heading": "Book Your Appointment",
+  "hero_subtitle": "Restoring Balance & Energy in Hertfordshire",
+  "meta_title": "Sacred Hollow Reiki",
+  "about_text": "Welcome to Sacred Hollow Reiki. I am a certified Reiki Level 1 and 2 practitioner based in Hatfield, Hertfordshire. I provide a safe, calm, and sacred space where we work together to unblock your energy centers and promote natural healing with focused 30 to 45-minute sessions."
+}
+---FILEEND:content/main.json---
+
+========REPOSITORYSNAPSHOTEND(/Users/rhys/projects/test-sacredhollow)========

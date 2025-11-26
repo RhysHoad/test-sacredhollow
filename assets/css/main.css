@@ -1,0 +1,349 @@
+@import url("fontawesome-all.min.css");
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,400italic,700,800");
+
+/* Reset & Basics */
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img, ul, li, form, label, footer, header, section {
+	margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;
+}
+article, aside, footer, header, nav, section { display: block; }
+body { line-height: 1; -webkit-text-size-adjust: none; }
+ul { list-style: none; }
+
+/* Page Setup */
+html {
+	box-sizing: border-box;
+	background-color: #313a3d; 
+}
+*, *:before, *:after { box-sizing: inherit; }
+
+/* SINGLE STATIC BACKGROUND IMAGE */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    
+    /* Ensure background image loads */
+    background-image: url("../css/images/bg.jpg"); 
+    background-repeat: no-repeat;
+    
+    /* Ensure perfect centering of the background image */
+    background-position: 50% 50%; 
+    
+    /* Original background properties (no change) */
+    background-size: 100% auto; 
+    background-attachment: fixed;
+    filter: brightness(1); 
+}
+
+/* Typography */
+body, input, select, textarea {
+	color: #384025;
+	font-family: "Raleway", "Helvetica", sans-serif;
+	font-size: 15pt;
+	font-weight: 400;
+	line-height: 1.75em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #384025;
+	font-weight: 800;
+	letter-spacing: 0.075em;
+	line-height: 1em;
+	margin: 0 0 1em 0;
+	text-transform: uppercase;
+}
+
+h2 { font-size: 1.75em; line-height: 1.5em; }
+h3 { font-size: 1em; line-height: 1.5em; }
+p { margin: 0 0 2em 0; }
+
+a {
+	transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+	border-bottom: dotted 1px;
+	color: #8cd1a8; 
+	text-decoration: none;
+}
+a:hover { border-bottom-color: transparent !important; color: #8cd1a8 !important; }
+
+/* Layout Containers */
+.container {
+	margin: 0 auto;
+	max-width: calc(100% - 4em);
+	width: 45em;
+}
+@media screen and (max-width: 980px) {
+	.container { width: 90% !important; }
+}
+
+/* Grid System (Simplified) */
+.row { display: flex; flex-wrap: wrap; box-sizing: border-box; margin-left: -1.5em; }
+.row > * { padding-left: 1.5em; box-sizing: border-box; }
+.col-6 { width: 50%; }
+.col-12 { width: 100%; }
+@media screen and (max-width: 736px) {
+    .col-6 { width: 100%; }
+}
+
+/* Sections */
+section.special { text-align: center; }
+
+/* Single-Page Full Viewport Sections (Default setup) */
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Default, overridden below for content pages */
+    align-items: center;
+    position: relative;
+    z-index: 1; 
+    padding: 2em 0; 
+}
+
+/* Content Sections FIX: Center content block vertically on the page */
+#one, #two, #three {
+    justify-content: center; 
+}
+
+/* Adjust the content container within the full-height sections */
+section .container {
+    padding: 4em 2.5em;
+    /* FIX: Make background fully opaque */
+    background: #ffffff; 
+    border-radius: 4px;
+    margin: 1em auto; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Header */
+#header {
+	height: 100vh;
+}
+
+/* Remove the white box/background around the button container in the header */
+#header .container {
+    background: none; 
+    box-shadow: none;
+    padding: 1em 0; 
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Ensures the button list is centered */
+#header .container ul.actions.special {
+    display: flex; 
+    justify-content: center; 
+    width: 100%;
+    padding-left: 0; 
+}
+
+/* Add spacing between the two buttons */
+#header .actions li {
+    padding: 0 0.5em; 
+}
+
+/* --- DUAL CTA STYLING --- */
+/* Set secondary button to be clearly visible but non-dominant */
+#header .button {
+    background-color: #384025; 
+    color: #ffffff !important;
+    box-shadow: none; 
+}
+
+/* Keep primary button (Learn More) green */
+#header .button.primary {
+    background-color: #384025; 
+    color: #ffffff !important;
+}
+
+#header header h1 {
+    font-size: 3.5em;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+#header header p {
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+/* Footer */
+#footer {
+    /* REMOVE padding from the section itself */
+    padding: 0; 
+    /* Ensures the section occupies the minimum space needed for its content + footer */
+    min-height: auto; 
+}
+#footer .container {
+    /* FIX: Make background fully opaque */
+    background: #ffffff;
+    padding: 3em;
+    /* Add margin to separate the contact block from the footer text */
+    margin-bottom: 2em;
+}
+
+/* Style for the footer element which is now outside the container */
+#footer footer {
+    /* Add padding to the footer element itself */
+    padding: 2em 0; 
+    /* Ensure it spans full width for centering to work reliably */
+    width: 100%;
+    
+    /* FIX: Center social media icons and copyright */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ensures horizontal dead center */
+    /* Remove original margin-top as padding provides spacing */
+    margin-top: 0; 
+}
+#footer footer .copyright li {
+    display: inline-block;
+    color: #384025; 
+    list-style: none;
+}
+
+/* Social Media Icons (ul.icons) */
+ul.icons {
+	cursor: default;
+	list-style: none;
+	padding-left: 0;
+	margin-top: 2em;
+}
+
+ul.icons li {
+	display: inline-block;
+	padding: 0 1em 0 0;
+}
+
+ul.icons li:last-child {
+    padding-right: 0;
+}
+
+ul.icons li .icon {
+	transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	border-radius: 100%;
+	border: solid 1px #384025; 
+	display: inline-block;
+	height: 2.25em;
+	line-height: 2.25em;
+	text-align: center;
+	width: 2.25em;
+    
+    color: #ffffff;
+    background: #384025; 
+    
+    /* Ensure Font Awesome glyph rendering */
+    font-family: 'Font Awesome 5 Brands', 'Font Awesome 5 Free'; 
+    font-weight: 900; 
+}
+
+ul.icons li .icon:hover {
+    background: #9ed8b6; 
+}
+
+ul.icons li .icon .label {
+	display: none;
+}
+
+
+/* Forms */
+input[type="text"], input[type="email"], textarea {
+	appearance: none;
+	background: rgba(144, 144, 144, 0.15);
+	border: none;
+	border-radius: 4px;
+	color: inherit;
+	display: block;
+	padding: 0.75em 1em;
+	width: 100%;
+    margin-bottom: 1em;
+}
+input:focus, textarea:focus {
+    background: rgba(144, 144, 144, 0.25);
+    outline: none;
+}
+
+/* Buttons */
+.button {
+	appearance: none;
+	transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	background-color: transparent;
+	border-radius: 4px;
+	border: 0;
+	box-shadow: inset 0 0 0 2px #dddddd;
+	color: #61686b !important;
+	cursor: pointer;
+	display: inline-block;
+	font-weight: 700;
+	height: 3em;
+	line-height: 3em;
+	padding: 0 2em;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+.button.primary {
+	background-color: #8cd1a8; 
+	box-shadow: none;
+	color: #ffffff !important;
+}
+.button.primary:hover {
+	background-color: #9ed8b6;
+}
+
+/* Icons Grid */
+ul.icons-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2em;
+}
+ul.icons-grid li {
+    width: 50%;
+    padding: 2em;
+    text-align: center;
+}
+ul.icons-grid li .icon {
+    color: #8cd1a8;
+    margin-bottom: 1em;
+}
+@media screen and (max-width: 480px) {
+    ul.icons-grid li { width: 100%; border-bottom: 1px solid #eee; }
+}
+
+/* Navigation Arrow */
+.goto-next {
+	background-color: rgba(144, 144, 144, 0.075);
+	background-image: url("images/arrow.svg"); 
+	background-position: center center;
+	background-repeat: no-repeat;
+	border-radius: 100%;
+	border: 0;
+	display: block;
+	height: 4em;
+	width: 4em;
+    margin: -2em auto 0 auto; 
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+}
+
+.goto-next:hover { background-color: rgba(144, 144, 144, 0.15); }
+
+/* Fix: ensures arrow is below the Google button */
+#three .goto-next {
+    margin-top: 2em; 
+}
+
+/* Animations */
+.is-preload * {
+    animation: none !important;
+    transition: none !important;
+}
